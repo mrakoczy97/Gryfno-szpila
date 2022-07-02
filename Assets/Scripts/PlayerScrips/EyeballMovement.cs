@@ -9,7 +9,6 @@ public class EyeballMovement : MonoBehaviour
     public float moveSpeed = 0.1f;
     private GameObject playerGo;
     private CircleCollider2D eyeballCircleCollider;
-    private Rigidbody2D playerRB;
     private CircleCollider2D playerCollider;
 
     // Start is called before the first frame update
@@ -17,7 +16,6 @@ public class EyeballMovement : MonoBehaviour
     {
         playerGo = this.transform.parent.gameObject;
         eyeballCircleCollider = GetComponent<CircleCollider2D>();
-        playerRB = playerGo.GetComponent<Rigidbody2D>();
         playerCollider = playerGo.GetComponent<CircleCollider2D>();
     }
 
@@ -29,7 +27,6 @@ public class EyeballMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //mousePosition = Input.mousePosition;
         mousePosition = Camera.main.WorldToScreenPoint(playerGo.transform.position);
 
         transform.position = Vector2.Lerp(
