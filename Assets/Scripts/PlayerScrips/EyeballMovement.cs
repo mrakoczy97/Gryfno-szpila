@@ -30,7 +30,7 @@ public class EyeballMovement : MonoBehaviour
         mousePosition = Camera.main.WorldToScreenPoint(playerGo.transform.position);
 
         transform.position = Vector2.Lerp(
-            transform.position, playerGo.transform.position + (Input.mousePosition - mousePosition).normalized
+            transform.position, playerGo.transform.position + (Input.mousePosition - mousePosition).normalized *playerCollider.transform.localScale.x
             * (playerCollider.radius - eyeballCircleCollider.radius), moveSpeed);
     }
 }
