@@ -32,9 +32,9 @@
 #*.unityproj
 #*.sln
 #*.suo
-#*.tmp
-#*.user
-#*.userprefs
+*.tmp
+*.user
+*.userprefs
 #*.pidb
 #*.booproj
 #*.svd
