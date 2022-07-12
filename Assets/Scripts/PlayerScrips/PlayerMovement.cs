@@ -11,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float playerRadius;
     public Animator animator;
     public SpriteRenderer _renderer;
-
+    public AnimationCurve movementSpeed;
+    private float time = 0;
     // Start is called before the first frame update
 
     private void Start()
@@ -84,7 +85,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Move()
     {
-        rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        
+        time += Time.deltaTime;
+
+        //rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        rb.MovePosition(rb.position+ moveDirection * moveSpeed  * Time.fixedDeltaTime * movementSpeed.Evaluate(time));
 
     }
 
