@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public AnimationCurve movementSpeed;
     private float time = 0;
     // Start is called before the first frame update
-
+    //chuj dupa cycki test
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
